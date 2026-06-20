@@ -1,0 +1,26 @@
+modules:
+  confluence:globalPage:
+    - key: quizapp-global-page
+      resource: main
+      render: native
+      resolver:
+        function: resolver
+      title: QuizApp
+      route: hello-world
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+permissions:
+  external:
+      images:
+        - address: https://media.giphy.com
+app:
+  runtime:
+    name: nodejs24.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/b5316896-9201-400c-a144-c0da42f92866
+
